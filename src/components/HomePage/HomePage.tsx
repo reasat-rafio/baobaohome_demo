@@ -1,13 +1,22 @@
 import { Navbar } from "../navBar/Navbar";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { useClientSize } from "../../utils/hooks/useResizer";
 
 interface HomeProps {}
 
 const Home: React.FC<HomeProps> = ({}) => {
+   const sectionRef = useRef<any>();
+
+   const { height } = useClientSize(sectionRef);
+
    return (
-      <section className="home 2xl:px-64  lg:px-9 sm:px-9 transition-all duration-300 w-full ">
-         <Navbar />
-         <div className="grid grid-cols-1 gap-2 md:grid-cols-2 mt-44 ">
+      <section
+         ref={sectionRef}
+         className="home  transition-all duration-300 w-full "
+      >
+         <Navbar height={height} />
+         <div className="grid grid-cols-1 gap-2 md:grid-cols-2 mt-44 container mx-auto">
             <div>
                <h1 className="text-royal-blue text-7xl font-black font-sans">
                   Bao Bao Home Tutor

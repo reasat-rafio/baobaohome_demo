@@ -1,13 +1,23 @@
 import { useState } from "react";
 
-interface NavbarProps {}
+interface NavbarProps {
+   height: number;
+}
 
-export const Navbar: React.FC<NavbarProps> = ({}) => {
+export const Navbar: React.FC<NavbarProps> = ({ height }) => {
    const [dropdown, setDorpdown] = useState<boolean>(false);
 
    return (
-      <nav className="m-auto transition duration-300 ease-in-out z-30 my-10 ">
-         <div className=" grid grid-cols-8 bg-white px-6 place-items-center transition-all duration-300 rounded-b-md  rounded-t-md py-7">
+      <nav
+         className={`fixed w-full transition-all duration-300 z-50 ${
+            height != 0 ? "top-0" : "top-8"
+         } `}
+      >
+         <div
+            className={` grid grid-cols-8 bg-white px-6 place-items-center transition-all duration-300 rounded-b-md  rounded-t-md  container mx-auto ${
+               height != 0 ? "py-2 shadow-lg" : "py-7"
+            }`}
+         >
             <div className="col-span-1">
                <a href="">
                   <img
@@ -82,43 +92,45 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
          </div>
 
          {dropdown && (
-            <ul
-               className={`bg-white p-4 scale-1 h-full  flex-col items-center  transform transition-all duration-150 ease-out ${
-                  dropdown ? "flex " : "hidden "
-               }`}
-            >
-               <li className="nav_li">
-                  <a className="nav_a" href="#">
-                     <div className="active_nav" />
-                     <span className="z-50">Home</span>
-                  </a>
-               </li>
-               <li className="nav_li mx-auto">
-                  <a className="nav_a" href="#">
-                     <span> About Us</span>
-                  </a>
-               </li>
-               <li className="nav_li">
-                  <a className="nav_a" href="#">
-                     <span> Choose Us</span>
-                  </a>
-               </li>
-               <li className="nav_li">
-                  <a className="nav_a" href="#">
-                     <span> Experience</span>
-                  </a>
-               </li>
-               <li className="nav_li">
-                  <a className="nav_a" href="#">
-                     <span> Packages</span>
-                  </a>
-               </li>
-               <li className="nav_li">
-                  <a className="nav_a" href="#">
-                     <span> Contact</span>
-                  </a>
-               </li>
-            </ul>
+            <div className="w-full fixed  transform transition-all duration-150 ease-out">
+               <ul
+                  className={`bg-white p-4  container mx-auto flex-col items-center  ${
+                     dropdown ? "flex " : "hidden "
+                  }`}
+               >
+                  <li className="nav_li">
+                     <a className="nav_a" href="#">
+                        <div className="active_nav" />
+                        <span className="z-50">Home</span>
+                     </a>
+                  </li>
+                  <li className="nav_li mx-auto">
+                     <a className="nav_a" href="#">
+                        <span> About Us</span>
+                     </a>
+                  </li>
+                  <li className="nav_li">
+                     <a className="nav_a" href="#">
+                        <span> Choose Us</span>
+                     </a>
+                  </li>
+                  <li className="nav_li">
+                     <a className="nav_a" href="#">
+                        <span> Experience</span>
+                     </a>
+                  </li>
+                  <li className="nav_li">
+                     <a className="nav_a" href="#">
+                        <span> Packages</span>
+                     </a>
+                  </li>
+                  <li className="nav_li">
+                     <a className="nav_a" href="#">
+                        <span> Contact</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
          )}
       </nav>
    );
