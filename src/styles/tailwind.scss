@@ -14,4 +14,8 @@
    @apply absolute bg-yellow-400 h-7 w-7 left-0 rounded-full opacity-70 translate-x-1/4;
 }
 
+.homepage_btn {
+   @apply px-10 py-4 text-white font-bold rounded-md;
+}
+
 @import "../components/HomePage/home";

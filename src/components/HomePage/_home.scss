@@ -1,13 +1,29 @@
 .home {
-   height: 100vh;
-   overflow-y: scroll;
-   background-image: url("/image/homebackground.png");
-   background-size: contain;
-   background-repeat: repeat;
-   // padding: 0 18rem;
    background-color: #fdf5eb;
-}
-
-.dropdown_nav {
-   // width: 100%;
+   &::after {
+      min-height: 100vh;
+      content: "";
+      background-image: url("/image/homebackground.png");
+      opacity: 0.2;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      background-size: contain;
+      background-repeat: repeat;
+   }
+   .img_container {
+      // min-height: 1000px;
+      .circle_bg {
+         background: url("https://i2.wp.com/files.123freevectors.com/wp-content/original/110713-dark-blue-blurred-background-vector.jpg?w=800&q=95");
+         background-size: cover;
+         background-repeat: no-repeat;
+         .img {
+            // background-size: cover !important;
+            // background-repeat: no-repeat !important;
+            // background-position: center !important;
+         }
+      }
+   }
 }
