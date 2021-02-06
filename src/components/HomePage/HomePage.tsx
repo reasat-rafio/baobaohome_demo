@@ -5,7 +5,7 @@ interface HomeProps {}
 
 const Home: React.FC<HomeProps> = ({}) => {
    return (
-      <section className="home xl:px-64  lg:px-14 sm:px-9 ">
+      <section className="home 2xl:px-64  lg:px-9 sm:px-9 transition-all duration-300 w-full ">
          <Navbar />
          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 mt-44 ">
             <div>
