@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface HomePageDetailsProps {}
 
@@ -42,7 +43,16 @@ export const HomePageDetails: React.FC<HomePageDetailsProps> = ({}) => {
                      layout="intrinsic"
                   />
                </div>
-               <div className="rounded-full  absolute top-1/2 right-0 z-40  transform translate-x-20">
+               <motion.div
+                  className=" absolute top-1/2 right-0 z-30 "
+                  initial={{ rotate: 0, x: 30 }}
+                  animate={{ rotate: 13 }}
+                  transition={{
+                     ease: "linear",
+                     duration: 3,
+                     yoyo: Infinity,
+                  }}
+               >
                   <Image
                      className=""
                      src="/image/ball.png"
@@ -51,8 +61,17 @@ export const HomePageDetails: React.FC<HomePageDetailsProps> = ({}) => {
                      height="70"
                      layout="intrinsic"
                   />
-               </div>
-               <div className="rounded-full absolute top-0 left-0 z-0  ">
+               </motion.div>
+               <motion.div
+                  className="absolute top-0 left-0 z-0  transform  "
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 13 }}
+                  transition={{
+                     ease: "linear",
+                     duration: 3,
+                     yoyo: Infinity,
+                  }}
+               >
                   <Image
                      className="z-0"
                      src="/image/pencil.png"
@@ -61,8 +80,17 @@ export const HomePageDetails: React.FC<HomePageDetailsProps> = ({}) => {
                      height="90"
                      layout="intrinsic"
                   />
-               </div>
-               <div className="rounded-full  absolute  bottom-0  right-0 z-0   transform translate-y-14">
+               </motion.div>
+               <motion.div
+                  className=" absolute  bottom-0  right-0  transform translate-y-14 z-30"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 13 }}
+                  transition={{
+                     ease: "linear",
+                     duration: 3,
+                     yoyo: Infinity,
+                  }}
+               >
                   <Image
                      className="z-30"
                      src="/image/triangle.png"
@@ -71,17 +99,26 @@ export const HomePageDetails: React.FC<HomePageDetailsProps> = ({}) => {
                      height="120"
                      layout="intrinsic"
                   />
-               </div>
-               <div className="rounded-full absolute  bottom-0  left-0 ">
+               </motion.div>
+               <motion.div
+                  className="absolute  bottom-0  left-0  z-30"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 13 }}
+                  transition={{
+                     ease: "linear",
+                     duration: 3,
+                     yoyo: Infinity,
+                  }}
+               >
                   <Image
-                     className="z-30"
+                     className=""
                      src="/image/trophy.png"
                      alt="picture"
                      width="120"
                      height="120"
                      layout="intrinsic"
                   />
-               </div>
+               </motion.div>
             </div>
          </div>
       </div>

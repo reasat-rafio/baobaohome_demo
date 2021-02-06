@@ -1,7 +1,7 @@
 import { Navbar } from "../navBar/Navbar";
 
-import { useEffect, useRef } from "react";
-import { useClientSize } from "../../utils/hooks/useResizer";
+import { useRef } from "react";
+import { useClientSize, useResize } from "../../utils/hooks/useResizer";
 import { HomePageDetails } from "./HomePageDetails/HomePageDetails";
 
 interface HomeProps {}
@@ -10,13 +10,15 @@ const Home: React.FC<HomeProps> = ({}) => {
    const sectionRef = useRef<any>();
 
    const { height } = useClientSize(sectionRef);
+   const { width } = useResize(sectionRef);
+   console.log(width);
 
    return (
       <section
          ref={sectionRef}
          className="home transition-all duration-300 min-h-screen flex justify-items-center items-center "
       >
-         <Navbar height={height} />
+         <Navbar height={height} width={width} />
          <HomePageDetails />
       </section>
    );

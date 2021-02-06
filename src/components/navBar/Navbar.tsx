@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface NavbarProps {
    height: number;
+   width: number;
 }
+const variants = {
+   open: { opacity: 1, y: 0 },
+   closed: { opacity: 0, y: "-100%" },
+};
 
-export const Navbar: React.FC<NavbarProps> = ({ height }) => {
+export const Navbar: React.FC<NavbarProps> = ({ height, width }) => {
    const [dropdown, setDorpdown] = useState<boolean>(false);
+
+   useEffect(() => {
+      if (width > 1265) {
+         setDorpdown(false);
+      }
+   }, [width]);
 
    return (
       <nav
@@ -91,47 +103,49 @@ export const Navbar: React.FC<NavbarProps> = ({ height }) => {
             </div>
          </div>
 
-         {dropdown && (
-            <div className="w-full fixed  transform transition-all duration-150 ease-out">
-               <ul
-                  className={`bg-white p-4  container mx-auto flex-col items-center  ${
-                     dropdown ? "flex " : "hidden "
-                  }`}
-               >
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
-                        <div className="active_nav" />
-                        <span className="z-50">Home</span>
-                     </a>
-                  </li>
-                  <li className="nav_li mx-auto">
-                     <a className="nav_a" href="#">
-                        <span> About Us</span>
-                     </a>
-                  </li>
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
-                        <span> Choose Us</span>
-                     </a>
-                  </li>
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
-                        <span> Experience</span>
-                     </a>
-                  </li>
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
-                        <span> Packages</span>
-                     </a>
-                  </li>
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
-                        <span> Contact</span>
-                     </a>
-                  </li>
-               </ul>
-            </div>
-         )}
+         <div className="w-full fixed  transform transition-all duration-150 ease-out">
+            <motion.ul
+               className={`bg-white p-4  container mx-auto flex-col items-center  ${
+                  dropdown ? "flex " : "hidden "
+               }`}
+               // variants={variants}
+               // animate={dropdown ? "rotate" : "stop"}
+               animate={dropdown ? "open" : "closed"}
+               variants={variants}
+            >
+               <li className="nav_li">
+                  <a className="nav_a" href="#">
+                     <div className="active_nav" />
+                     <span className="z-50">Home</span>
+                  </a>
+               </li>
+               <li className="nav_li mx-auto">
+                  <a className="nav_a" href="#">
+                     <span> About Us</span>
+                  </a>
+               </li>
+               <li className="nav_li">
+                  <a className="nav_a" href="#">
+                     <span> Choose Us</span>
+                  </a>
+               </li>
+               <li className="nav_li">
+                  <a className="nav_a" href="#">
+                     <span> Experience</span>
+                  </a>
+               </li>
+               <li className="nav_li">
+                  <a className="nav_a" href="#">
+                     <span> Packages</span>
+                  </a>
+               </li>
+               <li className="nav_li">
+                  <a className="nav_a" href="#">
+                     <span> Contact</span>
+                  </a>
+               </li>
+            </motion.ul>
+         </div>
       </nav>
    );
 };

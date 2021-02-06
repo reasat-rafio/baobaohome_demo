@@ -21,13 +21,11 @@ export const useResize = (myRef: any) => {
 };
 
 export const useClientSize = (myRef: any) => {
-   const [width, setWidth] = useState(0);
    const [height, setHeight] = useState(0);
    useEffect(() => {
       setHeight(window.pageYOffset);
+
       const handleResize = () => {
-         const width = myRef.current.getBoundingClientRect();
-         setWidth(width.x);
          setHeight(window.pageYOffset);
       };
       window.addEventListener("scroll", handleResize);
@@ -36,5 +34,5 @@ export const useClientSize = (myRef: any) => {
          window.removeEventListener("scroll", handleResize);
       };
    }, [myRef]);
-   return { width, height };
+   return { height };
 };
