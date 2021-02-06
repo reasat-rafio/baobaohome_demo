@@ -57,8 +57,8 @@ export const HomePageDetails: React.FC<HomePageDetailsProps> = ({}) => {
                      className=""
                      src="/image/ball.png"
                      alt="picture"
-                     width="70"
-                     height="70"
+                     width="90"
+                     height="90"
                      layout="intrinsic"
                   />
                </motion.div>
@@ -95,14 +95,14 @@ export const HomePageDetails: React.FC<HomePageDetailsProps> = ({}) => {
                      className="z-30"
                      src="/image/triangle.png"
                      alt="picture"
-                     width="120"
-                     height="120"
+                     width="90"
+                     height="90"
                      layout="intrinsic"
                   />
                </motion.div>
                <motion.div
                   className="absolute  bottom-0  left-0  z-30"
-                  initial={{ rotate: 0 }}
+                  initial={{ rotate: 0, x: 30 }}
                   animate={{ rotate: 13 }}
                   transition={{
                      ease: "linear",
@@ -114,8 +114,8 @@ export const HomePageDetails: React.FC<HomePageDetailsProps> = ({}) => {
                      className=""
                      src="/image/trophy.png"
                      alt="picture"
-                     width="120"
-                     height="120"
+                     width="90"
+                     height="90"
                      layout="intrinsic"
                   />
                </motion.div>
