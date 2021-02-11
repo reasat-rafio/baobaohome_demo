@@ -11,7 +11,6 @@ const Home: React.FC<HomeProps> = ({}) => {
 
    const { height } = useClientSize(sectionRef);
    const { width } = useResize(sectionRef);
-   console.log(width);
 
    return (
       <section
