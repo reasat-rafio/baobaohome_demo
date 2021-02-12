@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,3 +29,5 @@
 @import "../components/AboutUs/aboutUs";
 
 @import "../components/chooseUs/chooseUs";
+
+@import "../components/Footer/footer";

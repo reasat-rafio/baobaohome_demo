@@ -15,7 +15,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ articles }) => {
             <h1 className="text-lg text-yellow-600 font-semibold my-8  mt-10 mb-3">
                About Us
             </h1>
-            <h2 className="text-royal-blue font-bold text-5xl mb-10 mt-3">
+            <h2 className="text-royal-blue font-bold text-5xl mb-10 mt-3 font-title">
                Start Early !
             </h2>
          </div>

@@ -7,7 +7,7 @@ export const HomePageDetails: React.FC<HomePageDetailsProps> = ({}) => {
    return (
       <div className="grid grid-cols-1 xl:gap-36 lg:grid-cols-2 container mx-auto my-auto px-10 z-10 pt-40  xl:pt-0 lg:pt-44">
          <div className=" m-auto  ">
-            <h1 className="text-royal-blue text-7xl font-black font-sans py-6">
+            <h1 className="text-royal-blue text-7xl font-black py-6 font-title">
                Best School For Your Childs
             </h1>
             <p className="text-text-color py-6">

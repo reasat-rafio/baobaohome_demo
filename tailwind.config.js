@@ -10,6 +10,9 @@ module.exports = {
             "royal-blue": "#393d72",
             "text-color": "#88888B",
          },
+         fontFamily: {
+            title: ["Fredoka One"],
+         },
       },
       screens: {
          sm: "640px",
