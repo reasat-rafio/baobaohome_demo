@@ -18,6 +18,10 @@
    @apply px-10 py-4 text-white font-bold rounded-md;
 }
 
+.tableStyle {
+   @apply p-4 border border-gray-200 text-blue-900;
+}
+
 @import "../components/HomePage/home";
 
 @import "../components/AboutUs/aboutUs";
