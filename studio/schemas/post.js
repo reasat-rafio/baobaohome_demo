@@ -25,7 +25,6 @@ export default {
             hotspot: true,
          },
       },
-
       {
          name: "publishedAt",
          title: "Published at",

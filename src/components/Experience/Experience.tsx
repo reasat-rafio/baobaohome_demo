@@ -14,11 +14,14 @@ export const Experience: React.FC<ExperienceProps> = ({ experience }) => {
                Bao Bao Home Tutor Experience
             </h2>
          </div>
-         <div className="container mx-auto grid pb-14  xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-5">
+         <div className="container mx-auto">
             {experience &&
-               experience.map(({ body, list }) => (
-                  <>
-                     <div>
+               experience.map(({ body, list }, i: number) => (
+                  <div
+                     key={i}
+                     className=" grid pb-14  xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-3"
+                  >
+                     <div className=" col-span-1">
                         {body && (
                            <div className="text-text-color">
                               <BlockContent blocks={body} />
@@ -43,7 +46,7 @@ export const Experience: React.FC<ExperienceProps> = ({ experience }) => {
                         </ul>
                      </div>
 
-                     <div className="my-auto">
+                     <div className="my-auto col-span-1">
                         <video
                            poster="https://cdn.sanity.io/images/kohooh2x/production/6008c5a814ffaba4e22c00d3ec2e56196dae03a7-1920x1080.jpg"
                            width="1280"
@@ -56,7 +59,7 @@ export const Experience: React.FC<ExperienceProps> = ({ experience }) => {
                            />
                         </video>
                      </div>
-                  </>
+                  </div>
                ))}
          </div>
       </section>

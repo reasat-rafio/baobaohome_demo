@@ -8,10 +8,15 @@ import { Packages } from "../components/Packages/Packages";
 import { ContactForm } from "../components/ContactForm/ContactForm";
 import { Footer } from "../components/Footer/Footer";
 import { GetStaticProps } from "next";
+import { News } from "../components/News/News";
 
-export default function Home({ articles, chooseUs, experience, packages }) {
-   console.log(experience);
-
+export default function Home({
+   articles,
+   chooseUs,
+   experience,
+   packages,
+   news,
+}) {
    return (
       <div>
          <Head>
@@ -25,6 +30,7 @@ export default function Home({ articles, chooseUs, experience, packages }) {
             <ChooseUs chooseUs={chooseUs} />
             <Experience experience={experience} />
             <Packages packages={packages} />
+            <News news={news} />
             <ContactForm />
             <Footer />
          </main>
@@ -70,12 +76,25 @@ export const getStaticProps: GetStaticProps = async (context) => {
       `https://ee2b58n4.api.sanity.io/v1/data/query/production?query=${packagesQuery}`
    );
 
+   // news
+   const newsQuery = encodeURIComponent(`*[_type == "news"] {
+      mainImage,
+      releaseDate,
+      title,
+      description,
+      background,
+    }`);
+   const news = await axios(
+      `https://ee2b58n4.api.sanity.io/v1/data/query/production?query=${newsQuery}`
+   );
+
    return {
       props: {
          articles: articles.data.result,
          chooseUs: chooseUs.data.result,
          experience: experience.data.result,
          packages: packages.data.result,
+         news: news.data.result,
       },
    };
 };

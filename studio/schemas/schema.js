@@ -12,6 +12,7 @@ import knowAboutUs from "./knowAboutUs";
 import chooseUs from "./chooseUs";
 import exprience from "./experience";
 import packages from "./packages";
+import news from "./news";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,6 +29,7 @@ export default createSchema({
       chooseUs,
       exprience,
       packages,
+      news,
       // When added to this list, object types can be used as
       // { type: 'typename' } in other document schemas
       blockContent,
