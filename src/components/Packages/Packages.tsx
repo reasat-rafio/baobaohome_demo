@@ -106,7 +106,7 @@ export const Packages: React.FC<PackagesProps> = ({ packages }) => {
                      </td>
                   </tr>
                   <tr>
-                     <td className="bg-white p-4 text-gray-400" colSpan="3">
+                     <td className="bg-white p-4 text-gray-400" col-span="3">
                         <div className="block-content">
                            <p>Terms and Conditions</p>
                            <br />
