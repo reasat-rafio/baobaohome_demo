@@ -3,8 +3,11 @@ import { AboutUs } from "../components/AboutUs/AboutUs";
 import HomePage from "../components/HomePage/HomePage";
 import axios from "axios";
 import { ChooseUs } from "../components/chooseUs/ChooseUs";
+import { Experience } from "../components/Experience/Experience";
 
-export default function Home({ articles }) {
+export default function Home({ articles, chooseUs, experience }) {
+   console.log(experience);
+
    return (
       <div>
          <Head>
@@ -15,24 +18,45 @@ export default function Home({ articles }) {
          <main className="">
             <HomePage />
             <AboutUs articles={articles} />
-            <ChooseUs />
+            <ChooseUs chooseUs={chooseUs} />
+            <Experience experience={experience} />
          </main>
       </div>
    );
 }
 
 export const getStaticProps = async (context) => {
-   const query = encodeURIComponent(`*[_type == 'knowaboutus']|order( _createdAt asc)  {
+   const articleQuery = encodeURIComponent(`*[_type == 'knowaboutus']|order( _createdAt asc)  {
       body, 
       mainImage
     }`);
-   const result = await axios(
-      `https://ee2b58n4.api.sanity.io/v1/data/query/production?query=${query}`
+   const articles = await axios(
+      `https://ee2b58n4.api.sanity.io/v1/data/query/production?query=${articleQuery}`
+   );
+
+   // choose Us
+   const chooseUsQuery = encodeURIComponent(`*[_type == 'chooseus']|order( _createdAt asc){
+      title,
+      description
+    }`);
+   const chooseUs = await axios(
+      `https://ee2b58n4.api.sanity.io/v1/data/query/production?query=${chooseUsQuery}`
+   );
+
+   // Experience
+   const experienceQyery = encodeURIComponent(`*[_type == 'exprience'] {
+      body,
+      list
+   }`);
+   const experience = await axios(
+      `https://ee2b58n4.api.sanity.io/v1/data/query/production?query=${experienceQyery}`
    );
 
    return {
       props: {
-         articles: result.data.result,
+         articles: articles.data.result,
+         chooseUs: chooseUs.data.result,
+         experience: experience.data.result,
       },
    };
 };

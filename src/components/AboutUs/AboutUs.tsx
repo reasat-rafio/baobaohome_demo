@@ -23,7 +23,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ articles }) => {
          <div className="container mx-auto ">
             {/* First article */}
             <div className="grid  xl:grid-cols-2 lg:grid-cols-2 gap-3  md:grid-cols-1 sm:grid-cols-1 ">
-               <div className=" xl:my-auto lg:my-auto xl:mr-36 lg:mr-24 text-text-color md:my-7 sm:my-7  ">
+               <div className=" xl:my-auto lg:my-auto xl:mr-36 lg:mr-24 text-text-color md:my-7 sm:my-7">
                   {firstArticle.body && (
                      <BlockContent blocks={firstArticle.body} />
                   )}
