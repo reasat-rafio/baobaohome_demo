@@ -2,6 +2,7 @@ import Head from "next/head";
 import { AboutUs } from "../components/AboutUs/AboutUs";
 import HomePage from "../components/HomePage/HomePage";
 import axios from "axios";
+import { ChooseUs } from "../components/chooseUs/ChooseUs";
 
 export default function Home({ articles }) {
    return (
@@ -14,6 +15,7 @@ export default function Home({ articles }) {
          <main className="">
             <HomePage />
             <AboutUs articles={articles} />
+            <ChooseUs />
          </main>
       </div>
    );
