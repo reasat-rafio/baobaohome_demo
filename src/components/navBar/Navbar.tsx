@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 interface NavbarProps {
    height: number;
@@ -24,12 +25,20 @@ const containerVariants = {
 
 export const Navbar: React.FC<NavbarProps> = ({ height, width }) => {
    const [dropdown, setDorpdown] = useState<boolean>(false);
+   const [url, setUrl] = useState<string>("");
+
+   const router = useRouter();
 
    useEffect(() => {
       if (width > 1265) {
          setDorpdown(false);
       }
    }, [width]);
+
+   useEffect(() => {
+      var type = window.location.hash;
+      setUrl(type);
+   }, [height]);
 
    return (
       <nav
@@ -54,33 +63,38 @@ export const Navbar: React.FC<NavbarProps> = ({ height, width }) => {
 
             <ul className="list-none col-span-5 hidden  2xl:flex xl:flex  ">
                <li className="nav_li">
-                  <a className="nav_a" href="#">
-                     <div className="active_nav" />
+                  <a className="nav_a" href="#home">
+                     {url === "#home" && <div className="active_nav" />}
                      <span className="z-50">Home</span>
                   </a>
                </li>
                <li className="nav_li">
-                  <a className="nav_a" href="#">
+                  <a className="nav_a" href="#about_us">
+                     {url === "#about_us" && <div className="active_nav" />}
                      <span> About Us</span>
                   </a>
                </li>
                <li className="nav_li">
-                  <a className="nav_a" href="#">
+                  <a className="nav_a" href="#choose_us">
+                     {url === "#choose_us" && <div className="active_nav" />}
                      <span> Choose Us</span>
                   </a>
                </li>
                <li className="nav_li">
-                  <a className="nav_a" href="#">
+                  <a className="nav_a" href="#experience">
+                     {url === "#experience" && <div className="active_nav" />}
                      <span> Experience</span>
                   </a>
                </li>
                <li className="nav_li">
-                  <a className="nav_a" href="#">
+                  <a className="nav_a" href="#packages">
+                     {url === "#packages" && <div className="active_nav" />}
                      <span> Packages</span>
                   </a>
                </li>
                <li className="nav_li">
-                  <a className="nav_a" href="#">
+                  <a className="nav_a" href="#contact">
+                     {url === "#contact" && <div className="active_nav" />}
                      <span> Contact</span>
                   </a>
                </li>
@@ -124,34 +138,34 @@ export const Navbar: React.FC<NavbarProps> = ({ height, width }) => {
                   animate="visible"
                   exit="exit"
                >
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
-                        <div className="active_nav" />
+                  <li className="nav_a">
+                     <a className="" href="#home">
+                        {/* <div className="activabsolute bg-yellow-400 h-7 w-7 left-0 rounded-full opacity-70 top-1/2 transform translate-y-1/2e_nav" /> */}
                         <span className="z-50">Home</span>
                      </a>
                   </li>
-                  <li className="nav_li mx-auto">
-                     <a className="nav_a" href="#">
+                  <li className="nav_a ">
+                     <a className="" href="#about_us">
                         <span> About Us</span>
                      </a>
                   </li>
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
+                  <li className="nav_a">
+                     <a className="" href="#choose_us">
                         <span> Choose Us</span>
                      </a>
                   </li>
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
+                  <li className="nav_a">
+                     <a className="" href="#experience">
                         <span> Experience</span>
                      </a>
                   </li>
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
+                  <li className="nav_a">
+                     <a className="" href="#packages">
                         <span> Packages</span>
                      </a>
                   </li>
-                  <li className="nav_li">
-                     <a className="nav_a" href="#">
+                  <li className="nav_a">
+                     <a className="" href="#contact">
                         <span> Contact</span>
                      </a>
                   </li>

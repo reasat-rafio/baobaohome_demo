@@ -19,14 +19,14 @@ export const News: React.FC<NewsProps> = ({ news }) => {
          <div className="container mx-auto grid xl:grid-cols-3  lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 gap-5">
             {news &&
                news.map(
-                  ({
-                     description,
-                     mainImage,
-                     releaseDate,
-                     title,
-                     background,
-                  }) => (
-                     <div className="grid-cols-3 m-auto bg-white shadow-md relative rounded-md overflow-hidden">
+                  (
+                     { description, mainImage, releaseDate, title, background },
+                     i: number
+                  ) => (
+                     <div
+                        key={i}
+                        className="grid-cols-3 m-auto bg-white shadow-md relative rounded-md overflow-hidden"
+                     >
                         <div>
                            <img
                               src={urlFor(mainImage)

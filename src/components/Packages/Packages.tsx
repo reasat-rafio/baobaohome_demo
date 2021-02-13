@@ -10,7 +10,10 @@ export const Packages: React.FC<PackagesProps> = ({ packages }) => {
       twice_a_week_term_of_12_weeks,
    } = packages[0];
    return (
-      <section className="transition-all duration-300 py-28 bg-yellow-50 ">
+      <section
+         className="transition-all duration-300 py-28 bg-yellow-50 "
+         id="packages"
+      >
          <div className="container mx-auto flex flex-col justify-items-center items-center my-11">
             <h1 className="text-lg text-yellow-600 font-semibold my-8  mt-10 mb-3">
                Packages

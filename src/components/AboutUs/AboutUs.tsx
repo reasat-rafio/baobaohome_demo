@@ -9,7 +9,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ articles }) => {
    const secondArticle = articles[1];
 
    return (
-      <section className="transition-all duration-300 my-28">
+      <section className="transition-all duration-300 my-28" id="about_us">
          {/* Header section */}
          <div className="container mx-auto flex flex-col justify-items-center items-center my-11">
             <h1 className="text-lg text-yellow-600 font-semibold my-8  mt-10 mb-3">

@@ -4,16 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav_li {
-   @apply p-4 hover:bg-yellow-400 cursor-pointer rounded-md transition-all duration-300 relative;
+html {
+   scroll-behavior: smooth;
+}
+body {
+   transition: all 0.2s ease;
 }
 
+// .nav_li {
+//    @apply ;
+// }
+
 .nav_a {
-   @apply text-royal-blue font-bold;
+   @apply p-4 text-royal-blue font-bold hover:bg-yellow-400 cursor-pointer rounded-md transition-all duration-300 relative;
 }
 
 .active_nav {
-   @apply absolute bg-yellow-400 h-7 w-7 left-0 rounded-full opacity-70 translate-x-1/4;
+   @apply absolute bg-yellow-400 h-7 w-7 left-0 rounded-full opacity-70 top-1/2 transform -translate-y-1/2;
 }
 
 .homepage_btn {

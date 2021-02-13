@@ -5,7 +5,10 @@ interface ExperienceProps {
 
 export const Experience: React.FC<ExperienceProps> = ({ experience }) => {
    return (
-      <section className="transition-all duration-300 py-28 bg-gray-50">
+      <section
+         className="transition-all duration-300 py-28 bg-gray-50"
+         id="experience"
+      >
          <div className="container mx-auto flex flex-col justify-items-center items-center my-11">
             <h1 className="text-lg text-yellow-600 font-semibold my-8  mt-10 mb-3">
                Experience

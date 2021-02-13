@@ -6,7 +6,10 @@ interface ChooseUsProps {
 
 export const ChooseUs: React.FC<ChooseUsProps> = ({ chooseUs }) => {
    return (
-      <section className="choose-us transition-all duration-300 py-20">
+      <section
+         className="choose-us transition-all duration-300 py-20"
+         id="choose_us"
+      >
          <div className="container mx-auto flex flex-col justify-items-center items-center my-11">
             <h1 className="text-lg text-yellow-600 font-semibold my-8  mt-10 mb-3 ">
                Choose Us

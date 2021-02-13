@@ -2,7 +2,10 @@ interface ContactFormProps {}
 
 export const ContactForm: React.FC<ContactFormProps> = ({}) => {
    return (
-      <section className="transition-all duration-300 py-28 bg-blue-100 relative">
+      <section
+         className="transition-all duration-300 py-28 bg-blue-100 relative"
+         id="contact"
+      >
          <div className="absolute bottom-0">
             <img src="image/flower.png" alt="flower" />
          </div>
